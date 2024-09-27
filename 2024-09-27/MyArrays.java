@@ -24,7 +24,9 @@ public class MyArrays{
     int[] arrString = {1, 2, 3};
     System.out.println(arrayToString(arrString));
 
-    int[] copy = {1, 2, 3};
-    System.out.println(returnCopy(copy));
+    int[] copy = {4, 5, 2};
+    System.out.println("Are the arrays the same? " + (returnCopy(copy) == copy));
+	
+	
   }
 }
