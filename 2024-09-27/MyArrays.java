@@ -1,15 +1,21 @@
 public class MyArrays{
   public static String arrayToString(int[] ary)
   {
-    string start = "[";
+    String start = "[";
     for(int i = 0; i < ary.length; i++)
     {
       start += ary[i];
     }
     return (start + "]");
   }
-  public static void main(Strings[] args)
+
+  public static int[] returnCopy(int[] ary)
   {
-    System.out.println(arrayToString);
+    
+  }
+  public static void main(String[] args)
+  {
+    int[] arrString = {1, 2, 3};
+    System.out.println(arrayToString(arrString));
   }
 }
