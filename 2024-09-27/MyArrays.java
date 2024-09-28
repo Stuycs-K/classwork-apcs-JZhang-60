@@ -1,6 +1,10 @@
 public class MyArrays{
   public static String arrayToString(int[] ary)
   {
+	  if(ary.length == 0)
+	  {
+		  return "[]";
+	  }
     String start = "[";
     for(int i = 0; i < ary.length; i++)
     {
@@ -47,13 +51,29 @@ public class MyArrays{
   {
     int[] arrString = {1, 2, 3};
     System.out.println(arrayToString(arrString));
+	
+	int[] arrString2 = {};
+    System.out.println(arrayToString(arrString2));
+	
+    int[] arrString3 = {-1, -100, -29};
+    System.out.println(arrayToString(arrString3));
 
     int[] copy = {4, 5, 2};
     System.out.println("Are the arrays the same? " + (returnCopy(copy) == copy));
+	System.out.println("Are the values of the arrays equal? " + arrayToString(returnCopy(copy)).equals(arrayToString(copy)));
+	
+	int[] copy2 = {};
+    System.out.println("Are the arrays the same? " + (returnCopy(copy2) == copy2));
+	System.out.println("Are the values of the arrays equal? " + arrayToString(returnCopy(copy2)).equals(arrayToString(copy2)));
 	
 	int[] concat1 = {2, 1, 9, 0};
 	int[] concat2 = {40, 1, 3, 4, 8, 2};
 	int[] concatResult = {2, 1, 9, 0, 40, 1, 3, 4, 8, 2};
 	System.out.println(arrayToString(concatArray(concat1, concat2)).equals(arrayToString(concatResult)));
+	
+	int[] concat3 = {};
+	int[] concat4 = {};
+	int[] concatResult1 = {};
+	System.out.println(arrayToString(concatArray(concat3, concat4)).equals(arrayToString(concatResult1)));
   }
 }
