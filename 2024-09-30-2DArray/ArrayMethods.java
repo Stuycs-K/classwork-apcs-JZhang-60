@@ -2,10 +2,12 @@
 
 public class ArrayMethods {
   public static void main (String[] args) {
-    int[][] arr = new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}};
-    System.out.println("Test01: " + arr2DSum(arr));
-	
-	
+	  int[] arr = new int[] {2, 3, 4, 9};
+	  System.out.println("Does arrToString return [2, 3, 4, 9]? " + arrToString(arr));
+	  int[][] arr2d = new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
+	  System.out.println("Does arrToString return [[2, 3, 4], [5, 6, 7], [2, 4, 9]]? " + arrToString(arr2d));
+	  arr2d = new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}};
+	  System.out.println("Is " + arr2DSum(arr2d) + " equal to 18?");
   }
   /**Return a String that represets the array in the format:
 * "[2, 3, 4, 9]"
@@ -47,7 +49,7 @@ public class ArrayMethods {
     int sum = 0;
     for(int i = 0; i < nums.length; i++)
     {
-      for(int j = 0; i < nums[i].length; j++)
+      for(int j = 0; j < nums[i].length; j++)
       {
         sum += nums[i][j];
       }
