@@ -2,14 +2,31 @@
 
 public class ArrayMethods {
   public static void main (String[] args) {
+	  // arrToString array function test cases
 	  int[] arr = new int[] {2, 3, 4, 9};
 	  System.out.println("Does arrToString return [2, 3, 4, 9]? " + arrToString(arr).equals("[2, 3, 4, 9]"));
+	  
+	  // arrToString 2D-array function test cases
 	  int[][] arr2d = new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
 	  System.out.println("Does arrToString return [[2, 3, 4], [5, 6, 7], [2, 4, 9]]? " + arrToString(arr2d).equals("[[2, 3, 4], [5, 6, 7], [2, 4, 9]]"));
+	  
 	  arr2d = new int[][] {{2}, {5, 6}, {2, 4, 9}};
 	  System.out.println("Does arrToString return [[2], [5, 6], [2, 4, 9]]? " + arrToString(arr2d).equals("[[2], [5, 6], [2, 4, 9]]"));
+	  
+	  arr2d = new int[][] {{}, {}, {}};
+	  System.out.println("Does arrToString return [[], [], []]? " + arrToString(arr2d).equals("[[], [], []]"));
+	  
+	  // arr2DSum function test cases
 	  arr2d = new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}};
 	  System.out.println("Is " + arr2DSum(arr2d) + " equal to 19? " + (arr2DSum(arr2d) == 19));
+	  
+	  arr2d = new int[][] {{0}, {0, 0}, {0, 0, 0, 0}};
+	  System.out.println("Is " + arr2DSum(arr2d) + " equal to 0? " + (arr2DSum(arr2d) == 0));
+	  
+	  arr2d = new int[][] {{}, {}, {}};
+	  System.out.println("Is " + arr2DSum(arr2d) + " equal to 0? " + (arr2DSum(arr2d) == 0));
+	  
+	  // swapRC function test cases
 	  arr2d = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Does swapRC return [[1, 4], [2, 5], [3, 6]]? " + arrToString(swapRC(arr2d)).equals("[[1, 4], [2, 5], [3, 6]]"));
   }
