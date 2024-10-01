@@ -6,8 +6,12 @@ public class ArrayMethods {
 	  System.out.println("Does arrToString return [2, 3, 4, 9]? " + arrToString(arr).equals("[2, 3, 4, 9]"));
 	  int[][] arr2d = new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
 	  System.out.println("Does arrToString return [[2, 3, 4], [5, 6, 7], [2, 4, 9]]? " + arrToString(arr2d).equals("[[2, 3, 4], [5, 6, 7], [2, 4, 9]]"));
+	  arr2d = new int[][] {{2}, {5, 6}, {2, 4, 9}};
+	  System.out.println("Does arrToString return [[2], [5, 6], [2, 4, 9]]? " + arrToString(arr2d).equals("[[2], [5, 6], [2, 4, 9]]"));
 	  arr2d = new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}};
-	  System.out.println("Is " + arr2DSum(arr2d) + " equal to 19?");
+	  System.out.println("Is " + arr2DSum(arr2d) + " equal to 19? " + (arr2DSum(arr2d) == 19));
+	  arr2d = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	  System.out.println("Does swapRC return [[1, 4], [2, 5], [3, 6]]? " + arrToString(swapRC(arr2d)).equals("[[1, 4], [2, 5], [3, 6]]"));
   }
   /**Return a String that represets the array in the format:
 * "[2, 3, 4, 9]"
@@ -71,7 +75,7 @@ public class ArrayMethods {
 	  {
 		  for(int j = 0; j < nums.length; j++)
 		  {
-			  arr[j][i] = nums[j][i];
+			  arr[i][j] = nums[j][i];
 		  }
 	  }
 	  return arr;
