@@ -29,6 +29,15 @@ public class ArrayMethods {
 	  // swapRC function test cases
 	  arr2d = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Does swapRC return [[1, 4], [2, 5], [3, 6]]? " + arrToString(swapRC(arr2d)).equals("[[1, 4], [2, 5], [3, 6]]"));
+	  
+	   // copy function test cases
+	  arr2d = new int[][] {{7, 7, 7}, {2, 3}};
+	  System.out.println("Does copy return a copy of the original array? " + (copy(arr2d) != arr2d));
+	  System.out.println("Does copy return a copy with the same values? " + (arrToString(copy(arr2d)).equals(arrToString(arr2d))));
+	  
+	  arr2d = new int[][] {{9, 3}, {10, 22}};
+	  System.out.println("Does copy return a copy of the original array? " + (copy(arr2d) != arr2d));
+	  System.out.println("Does copy return a copy with the same values? " + (arrToString(copy(arr2d)).equals(arrToString(arr2d))));
   }
   /**Return a String that represets the array in the format:
 * "[2, 3, 4, 9]"
@@ -139,7 +148,7 @@ public static int[] copyHelper(int[] nums){
 	  {
 		  for(int j = 0; j < nums[0].length; j++)
 		  {
-			  copyHelper(copy[i]);
+			  copy[i] = copyHelper(nums[i]);
 		  }
 	  }
 	  return copy;
