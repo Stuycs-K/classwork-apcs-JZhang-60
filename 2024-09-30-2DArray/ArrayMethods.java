@@ -29,6 +29,15 @@ public class ArrayMethods {
 	  // swapRC function test cases
 	  arr2d = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Does swapRC return [[1, 4], [2, 5], [3, 6]]? " + arrToString(swapRC(arr2d)).equals("[[1, 4], [2, 5], [3, 6]]"));
+	  
+	   // copy function test cases
+	  arr2d = new int[][] {{7, 7, 7}, {2, 3}};
+	  System.out.println("Does copy return a copy of the original array? " + (copy(arr2d) != arr2d));
+	  System.out.println("Does copy return a copy with the same values? " + (arrToString(copy(arr2d)).equals(arrToString(arr2d))));
+	  
+	  arr2d = new int[][] {{9, 3}, {10, 22}};
+	  System.out.println("Does copy return a copy of the original array? " + (copy(arr2d) != arr2d));
+	  System.out.println("Does copy return a copy with the same values? " + (arrToString(copy(arr2d)).equals(arrToString(arr2d))));
   }
   /**Return a String that represets the array in the format:
 * "[2, 3, 4, 9]"
@@ -96,5 +105,52 @@ public class ArrayMethods {
 		  }
 	  }
 	  return arr;
+  }
+
+  //3. Modify a given 2D array of integer as follows:
+//Replace all the negative values:
+//-When the row number is the same as the column number replace
+//that negative with the value 1
+//-All other negatives replace with 0
+  public static void replaceNegative(int[][] vals){
+    for (int i = 0; i < vals.length; i ++) {
+      for (int j = 0; j < vals[i].length; j ++) {
+        if (vals[i][j] < 0) {
+          if (i == j) {
+            vals[i][j] = 1;
+          }
+          else {
+            vals[i][j] = 0;
+          }
+        }
+      }
+    }
+  }
+
+
+  //4. Make a copy of the given 2d array.
+//When testing : make sure that changing the original does NOT change the copy.
+//DO NOT use any built in methods that "copy" an array.
+//You SHOULD write a helper method for this.
+//If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[] copyHelper(int[] nums){
+	int[] copy = new int[nums.length];
+	for(int i = 0; i < nums.length; i++)
+	{
+		copy[i] = nums[i];
+	}
+	return copy;
+}
+
+  public static int[][] copy(int[][] nums){
+	  int[][] copy = new int[nums.length][nums[0].length];
+	  for(int i = 0; i < nums.length; i++)
+	  {
+		  for(int j = 0; j < nums[0].length; j++)
+		  {
+			  copy[i] = copyHelper(nums[i]);
+		  }
+	  }
+	  return copy;
   }
 }
