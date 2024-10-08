@@ -5,6 +5,16 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
+	int arr[] = new int[] {3, 2, 90, 4};
+	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr).equals(arrToString(arr)));
+	arr = new int[] {0, 0, 0};
+	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr).equals(arrToString(arr)));
+	arr = new int[] {};
+	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr).equals(arrToString(arr)));
+	int arr2d[][] = new int[][] {{0, 0, 0}, {2, 3, 9}};
+	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr2d).equals(arrToString(arr2d)));
+	arr2d = new int[][] {{}, {}};
+	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr2d).equals(arrToString(arr2d)) + Arrays.toString(arr2d) + arrToString(arr2d));
 
 
   }
@@ -44,18 +54,18 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    int counter = 0;
+    int count = 0;
     for(int i = 0; i < nums.length; i++)
     {
       for(int j = 0; j < nums.length; j++)
       {
         if (nums[i][j] == 0)
         {
-          
+          count++;
         }
       }
     }
-    return 0;
+    return count;
   }
 
   //2. Calculate the sum of a 2d array
