@@ -5,6 +5,7 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
+	//Arrays.toString() vs arrayToString() test cases
 	int arr[] = new int[] {3, 2, 90, 4};
 	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr).equals(arrToString(arr)));
 	arr = new int[] {0, 0, 0};
@@ -15,12 +16,16 @@ public class ArrayDemo{
 	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr2d).equals(arrToString(arr2d)));
 	arr2d = new int[][] {{}, {}};
 	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr2d).equals(arrToString(arr2d)) + Arrays.toString(arr2d) + arrToString(arr2d));
+	
+	//countZeros2D function test cases
 	arr2d = new int[][] {{2, 3, 4, 0}, {0, 0, 1}};
 	System.out.println("Expected zeros of 3, returned " + countZeros2D(arr2d));
 	arr2d = new int[][] {{0}, {0, 0, 0, 0, 0}};
 	System.out.println("Expected zeros of 6, returned " + countZeros2D(arr2d));
 	arr2d = new int[][] {{0}, {}};
 	System.out.println("Expected zeros of 1, returned " + countZeros2D(arr2d));
+	arr2d = new int[][] {{}, {}, {}, {}};
+	System.out.println("Expected zeros of 0, returned " + countZeros2D(arr2d));
 
 
   }
@@ -160,7 +165,17 @@ public class ArrayDemo{
   //   Note there is no whitespace in the string, it all one line with no spaces/tabs.
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
+  public static String htmlTableHelper(int[] nums){
+	  String concatenate = "<tr>";
+	  for(int i = 0; i < nums.length; i++)
+	  {
+		  concatenate = concatenate + "<td>" + nums[i] + "</td>";
+	  }
+	  return concatenate + "</tr>";
+  }
+		  
   public static String htmlTable(int[][]nums){
+	  
     return "";
   }
 }
