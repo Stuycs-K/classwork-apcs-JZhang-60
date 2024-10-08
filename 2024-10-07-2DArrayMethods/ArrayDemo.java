@@ -15,6 +15,12 @@ public class ArrayDemo{
 	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr2d).equals(arrToString(arr2d)));
 	arr2d = new int[][] {{}, {}};
 	System.out.println("Is toString equal to arrayToString? " + Arrays.toString(arr2d).equals(arrToString(arr2d)) + Arrays.toString(arr2d) + arrToString(arr2d));
+	arr2d = new int[][] {{2, 3, 4, 0}, {0, 0, 1}};
+	System.out.println("Expected zeros of 3, returned " + countZeros2D(arr2d));
+	arr2d = new int[][] {{0}, {0, 0, 0, 0, 0}};
+	System.out.println("Expected zeros of 6, returned " + countZeros2D(arr2d));
+	arr2d = new int[][] {{0}, {}};
+	System.out.println("Expected zeros of 1, returned " + countZeros2D(arr2d));
 
 
   }
@@ -57,14 +63,18 @@ public class ArrayDemo{
     int count = 0;
     for(int i = 0; i < nums.length; i++)
     {
-      for(int j = 0; j < nums.length; j++)
-      {
-        if (nums[i][j] == 0)
-        {
-          count++;
-        }
-      }
-    }
+		if(nums[i].length == 0)
+		{
+			count = count;;
+		}
+			for(int j = 0; j < nums[i].length; j++)
+			{
+				if (nums[i][j] == 0)
+				{
+					count++;
+				}
+			}
+	}
     return count;
   }
 
