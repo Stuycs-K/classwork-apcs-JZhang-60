@@ -175,7 +175,11 @@ public class ArrayDemo{
   }
 		  
   public static String htmlTable(int[][]nums){
-	  
-    return "";
+	  String concatenate = "<table>";
+	  for(int i = 0; i < nums.length; i++)
+	  {
+		  concatenate = concatenate + htmlTableHelper(nums[i]);
+	  }
+	  return concatenate + "</table>";
   }
 }
