@@ -32,9 +32,11 @@ public class ArrayDemo{
 	System.out.println("Expected <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>, returned \n" + htmlTable(arr2d));
 	arr2d = new int[][] {{}, {}, {}};
 	System.out.println("Expected <table><tr></tr><tr></tr><tr></tr></table>, returned \n" + htmlTable(arr2d));
-	
-
-
+	arr2d = new int[][] {{0},{}};
+	System.out.println("Expected <table><tr><td>0</td></tr><tr></tr></table>, returned \n" + htmlTable(arr2d));
+	arr2d = new int[][] {{-413},{201, -4}};
+	System.out.println("Expected <table><tr><td>-413</td></tr><tr><td>201</td><td>-4</td></tr></table>\nReturned " + htmlTable(arr2d));
+	System.out.println("Equality check: " + "<table><tr><td>-413</td></tr><tr><td>201</td><td>-4</td></tr></table>".equals(htmlTable(arr2d)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
