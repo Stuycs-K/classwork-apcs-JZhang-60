@@ -26,6 +26,13 @@ public class ArrayDemo{
 	System.out.println("Expected zeros of 1, returned " + countZeros2D(arr2d));
 	arr2d = new int[][] {{}, {}, {}, {}};
 	System.out.println("Expected zeros of 0, returned " + countZeros2D(arr2d));
+	
+	//htmlTable function test cases
+	arr2d = new int[][] {{1,2},{3}};
+	System.out.println("Expected <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>, returned \n" + htmlTable(arr2d));
+	arr2d = new int[][] {{}, {}, {}};
+	System.out.println("Expected <table><tr></tr><tr></tr><tr></tr></table>, returned \n" + htmlTable(arr2d));
+	
 
 
   }
