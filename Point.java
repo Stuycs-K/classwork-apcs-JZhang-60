@@ -9,13 +9,12 @@ public class Point{
   public Point(Point other){
     //COMPLETE THIS SECOND
     //Then write test cases.
-
     x = other.getX();
     y = other.getY();
   }
 
   //Initialize this Point to have the provided values
-  public Point(double x, double Y){
+  public Point(double x, double y){
     this.x=x;
     this.y=y;
   }
