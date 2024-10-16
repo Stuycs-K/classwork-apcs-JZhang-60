@@ -9,13 +9,14 @@ public class Demo{
   }
 
   public static void main(String[]args){
+	// Distance point objects
     Point p1 = new Point(1,1);
     Point p2 = new Point(-1,-1);
     Point p3 = new Point(3,4);
 	Point p4 = new Point(0, 0);
-	Point p5 = new Point(-4, 5);
+	Point p5 = new Point(-4, 5.3);
 	
-	// Constructor test cases
+	// toString test cases
     System.out.println( p3);
 	System.out.println( p5);
 	
@@ -39,5 +40,9 @@ public class Demo{
 	Point t1 = new Point(1, 0);
 	Point t2 = new Point(0.5, Math.sqrt(3)/2);
 	
+	// Equilateral Triangle test cases
+	System.out.println( t.distanceTo(t1));
+	System.out.println( t1.distanceTo(t2));
+	System.out.println( t2.distanceTo(t));
   }
 }
