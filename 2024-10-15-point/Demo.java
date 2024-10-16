@@ -34,5 +34,10 @@ public class Demo{
 	System.out.println( p4.distanceTo(p5));
 	System.out.println( p3.distanceTo(p4));
 	
+	// Equilateral Triangle objects
+	Point t = new Point(0, 0);
+	Point t1 = new Point(1, 0);
+	Point t2 = new Point(0.5, Math.sqrt(3)/2);
+	
   }
 }
