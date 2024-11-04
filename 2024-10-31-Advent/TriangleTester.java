@@ -7,7 +7,24 @@ public class TriangleTester{
 	}
 	
 	public static int countTrianglesA(String filename){
-		return 0;
+		int triangleCounter = 0;
+		try{
+			File file = new File(filename);
+			Scanner input = new Scanner(file);
+			while(input.hasNextInt()){
+				if(isTriangle(input.nextInt(), input.nextInt(), input.nextInt())){
+					triangleCounter++;
+				}
+			}
+			input.close();
+		}
+		catch(FileNotFoundException ex){
+			System.out.println("File not found");
+		}
+		return triangleCounter;
+	}
+	public static void main(String[] args){
+		System.out.println(countTrianglesA("inputTri.txt"));
 	}
 }
 		
