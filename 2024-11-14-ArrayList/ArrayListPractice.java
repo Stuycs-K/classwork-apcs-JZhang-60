@@ -13,7 +13,14 @@ public class ArrayListPractice{
     }
     return result;
   }
+  public static void replaceEmpty(ArrayList<String> original){
+    for(int i = 0; i < original.length; i++){
+      original.add(original.indexOf(""), "Empty");
+    }
+    return original;
+  }
   public static void main(String[] args){
     System.out.println(createRandomArray(30));
+    System.out.println(replaceEmpty(createRandomArray(300000)));
   }
 }
