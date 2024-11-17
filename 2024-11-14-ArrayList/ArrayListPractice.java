@@ -14,13 +14,22 @@ public class ArrayListPractice{
     return result;
   }
   public static void replaceEmpty(ArrayList<String> original){
-    for(int i = 0; i < original.length; i++){
+    for(int i = 0; i < original.size(); i++){
       original.add(original.indexOf(""), "Empty");
     }
-    return original;
   }
+  public static ArrayList<String> makeReversedList( ArrayList<String> original){
+  //return a new ArrayList that is in the reversed order of the original.
+  ArrayList<String>result = new ArrayList<String>(original.size());
+  for(int i = 0; i < original.size(); i++){
+	  result.add(original.get(original.size()-1-i));
+  }
+  return result;
+}
   public static void main(String[] args){
-    System.out.println(createRandomArray(30));
-    System.out.println(replaceEmpty(createRandomArray(300000)));
+	  ArrayList<String> test1 = createRandomArray(30);
+    System.out.println(createRandomArray(300000));
+	System.out.println(test1);
+	System.out.println(makeReversedList(test1));
   }
 }
