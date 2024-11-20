@@ -42,4 +42,42 @@ public class AdventDay2{
 	  }
 	  return finalFinalCode;
   }
+  //Part B
+    public static int keypadResultB(String fileName){
+  	  int finalFinalCode = 0;
+  	  int keypadNumPos = 5; // 10 = A 11 = B 12 = C 15 = D
+  	  ArrayList<Integer> finalCode = new ArrayList<Integer>();
+  	  try{
+  		  File file = new File(fileName);
+  		  Scanner input = new Scanner(file);
+  		  while(input.hasNextLine()){
+  			  String store = input.nextLine();
+  			  for(int i = 0; i < store.length(); i++){
+  			  if(store.charAt(i) == ('U') && keypadNumPos % ){
+  				  if(keypadNumPos -= 3
+  			  } else
+  			  if(store.charAt(i) == ('D') && keypadNumPos < 7){
+  				  keypadNumPos += 3;
+  			  } else
+  			  if(store.charAt(i) == ('L') && keypadNumPos % 3 != 1){
+  				  keypadNumPos -= 1;
+  			  } else
+  			  if(store.charAt(i) == ('R') && keypadNumPos % 3 != 0){
+  				  keypadNumPos += 1;
+  			  }
+  		  }
+  		  finalCode.add(keypadNumPos);
+  		  keypadNumPos = 5;
+  		}
+  		  input.close();
+  	  }
+  	  catch(FileNotFoundException e){
+  		  System.out.println("File not found");
+  	  }
+  	  for(int i = 0; i<finalCode.size();i++){
+  		  finalFinalCode += finalCode.get(i) * (int) Math.pow(10, finalCode.size()-i-1);
+  	  }
+  	  return finalFinalCode;
+    }
+  }
 }
