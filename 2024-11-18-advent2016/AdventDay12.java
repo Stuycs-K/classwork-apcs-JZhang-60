@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class AdventDay12 {
     public static void main(String[] args) {
-        System.out.println(registerChecker("checker9.txt"));
+        System.out.println(registerChecker("checker12.txt"));
     }
     public static int registerChecker(String fileName) {
         ArrayList<String> wholeStore = new ArrayList<>();
@@ -85,7 +85,7 @@ public class AdventDay12 {
         return a;
     }
 
-    private static int getValue(String str, int a, int b, int c, int d) {
+    public static int getValue(String str, int a, int b, int c, int d) {
         if (str.equals("a")){
 			return a;
 		}
