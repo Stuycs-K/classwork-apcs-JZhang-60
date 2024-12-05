@@ -19,6 +19,7 @@ public class Driver{
 			}
 		for(int i = 0; i < 3; i++){
 			Text.go(2, (3 +(74/2)*i));
+			colorPicker(threeInt[i]);
 			System.out.print(threeInt[i]);
 		}
 	}
@@ -27,6 +28,15 @@ public class Driver{
 			arr[i] = (int) (Math.random() * 100);
 		}
 		return arr;
+	}
+	public static void colorPicker(int num){
+		if(num < 25){
+			Text.color(Text.RED, Text.BRIGHT);
+		} else if(num>75){
+			Text.color(Text.GREEN, Text.BRIGHT);
+		} else{
+			Text.color(Text.WHITE);
+		}
 	}
 }
 	
