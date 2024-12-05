@@ -4,7 +4,12 @@ public class Driver{
 		int[] threeInt = new int[3];
 		int w = 80;
 		int h = 30;
+		int centerY = h/2;
+		int centerX = w/2;
+		int r = h/4;
+		int binFlip = 0;
 		fillArr(threeInt);
+		// border
 		Text.color(Text.BLUE,Text.background(Text.BLUE));
 		for(int i = 1; i <= h; i++){
 			for(int j = 1; j <= w; j++){
@@ -19,16 +24,38 @@ public class Driver{
 				}
 				}
 			}
+		// int placements
 		for(int i = 0; i < 3; i++){
 			Text.go(2, (3 +(74/2)*i));
 			colorPicker(threeInt[i]);
 			System.out.print(threeInt[i]);
 		}
+		// horizontal
 		Text.color(Text.WHITE,Text.background(Text.BLUE),Text.BRIGHT);
 		for(int i = 2; i <= w-1; i++){
 			Text.go(3, i);
 			System.out.print("-");
 	}
+	// oval
+	Text.color(Text.WHITE,Text.background(Text.MAGENTA),Text.BRIGHT);
+	for(int i = 1; i <= h-10; i++){
+		for(int j = 1; j <=w-10;j++){
+			if(Math.pow(j-centerX, 2) + Math.pow(i-centerY, 4) <= Math.pow(r, 3)){
+				Text.go(i, j);
+				binFlip = (int) (Math.random()*2);
+				if(binFlip == 0){
+				Text.color(Text.MAGENTA,Text.background(Text.MAGENTA),Text.BRIGHT);
+				System.out.print("0");
+				}
+				Text.color(Text.WHITE,Text.background(Text.MAGENTA),Text.BRIGHT);
+				if(binFlip == 1){
+				System.out.print("1");
+				}
+			}
+		}
+	}
+	Text.go(31,0);
+	System.out.println(Text.RESET);
 	}
 	public static int[] fillArr(int[] arr){
 		for(int i = 0; i < arr.length; i++){
