@@ -39,14 +39,20 @@ public class Warrior extends Adventurer{
 		
 	@Override
 	public String support(Adventurer other){
+		if(other.getHP() > 0){
 		other.setHP(getHP()+20);
 		return "Bandaged! " + other.getName() + " is now at " + this.getHP()+ "!";
+		}
+		return other.getName() + " can't be supported because health is lower than 0!";
 	}
 		
 	@Override
 	public String support(){
+		if(this.getHP() > 0){
 		this.setHP(getHP()+20);
 		return "Bandaged! " + this.getName() + " is now at " + this.getHP() + "!";
+		}
+		return this.getName() + " is already dead.";
 	}
 	
 	@Override
