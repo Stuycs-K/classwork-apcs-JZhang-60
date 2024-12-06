@@ -29,9 +29,12 @@ public class Warrior extends Adventurer{
 	
 	@Override
 	public String attack(Adventurer other){
+		if(other.getHP() > 0){
 		other.applyDamage(30);
 		this.restoreSpecial(10);
-		return this.getName() + " hit the opponent with a slash!";
+		return this.getName() + " hit " + other.getName() + " with a slash!";
+		}
+		return other.getName() + " is already dead and attacking dead bodies is cruel";
 	}
 		
 	@Override
@@ -51,9 +54,12 @@ public class Warrior extends Adventurer{
 		if(rage<30){
 			return this.getName() + " needs more " + this.getSpecialName() + " to perform special attack!";
 		}
+		if(other.getHP() > 0){
 		rage-=30;
 		other.applyDamage(75);
-		return this.getName() + " consumed all their " + this.getSpecialName() + " and charged at the opponent!";
+		return this.getName() + " consumed all their " + this.getSpecialName() + " and charged at " + other.getName() + "!";
+		}
+		return other.getName() + " is dead and you can not attack dead bodies";
 	}
 }
 	
