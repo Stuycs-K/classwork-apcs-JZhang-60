@@ -4,6 +4,8 @@ public class Warrior extends Adventurer{
 	
 	public Warrior(String name, int hp){
 	super(name, hp);
+	rage = 0;
+	maxRage = 100;
 	}
 	
 	@Override
@@ -28,7 +30,8 @@ public class Warrior extends Adventurer{
 	@Override
 	public String attack(Adventurer other){
 		other.applyDamage(30);
-		return this.getName() + "hit the opponent with a slash!";
+		this.restoreSpecial(10);
+		return this.getName() + " hit the opponent with a slash!";
 	}
 		
 	@Override
@@ -46,11 +49,11 @@ public class Warrior extends Adventurer{
 	@Override
 	public String specialAttack(Adventurer other){
 		if(rage<30){
-			return this.getName() + "needs more" + this.getSpecialName() + "to perform special attack!";
+			return this.getName() + " needs more " + this.getSpecialName() + " to perform special attack!";
 		}
 		rage-=30;
 		other.applyDamage(75);
-		return this.getName() + "consumed all their" + this.getSpecialName() + "and charged at the opponent!";
+		return this.getName() + " consumed all their " + this.getSpecialName() + " and charged at the opponent!";
 	}
 }
 	
