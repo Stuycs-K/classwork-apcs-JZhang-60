@@ -21,9 +21,8 @@ class Main {
     } if(playerInput.equals("quit")){
 		  programSwitch = false;
     }
-	if(enemy.getHP() > 0){
+	if(enemy.getHP() > 0 && !playerInput.equals("quit")){
 		randomAction = (int) (Math.random()*3);
-		System.out.println(randomAction);
 		if(randomAction == 0){
 			System.out.println(enemy.attack(player));
 		}
@@ -33,6 +32,13 @@ class Main {
 		if(randomAction == 2){
 			System.out.println(enemy.specialAttack(player));
 		}
+	}
+	if(enemy.getHP() < 0 && !playerInput.equals("quit")){
+		System.out.println("The winner is " + player.getName() + "!");
+		programSwitch = false;
+	}else if(player.getHP() < 0 && !playerInput.equals("quit")){
+		System.out.println("The winner is " + enemy.getName() + "!");
+		programSwitch = false;
 	}
 }
 }
