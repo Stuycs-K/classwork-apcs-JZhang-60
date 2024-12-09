@@ -12,13 +12,13 @@ class Main {
 	  System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
 	  String playerInput = userInput.nextLine();
 	  if(playerInput.equals("a") || playerInput.equals("attack")){
-		  player.attack(enemy);
+		  System.out.println(player.attack(enemy));
     } else if(playerInput.equals("s") || playerInput.equals("special")){
-		  player.specialAttack(enemy);
+		  System.out.println(player.specialAttack(enemy));
     } else if(playerInput.equals("su") || playerInput.equals("support")){
-		  player.support();
+		  System.out.println(player.support());
     } else if(playerInput.equals("quit")){
-		  programSwitch = true;
+		  programSwitch = false;
     }
 }
 }
