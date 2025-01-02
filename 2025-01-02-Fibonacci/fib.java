@@ -2,7 +2,7 @@
 largest fibonacci number under 10 seconds was fibonacci(46) resulting in 1836311903
 
 What is the largest n such that fib(n) fits in an int? (does not overflow)
-The largest n that overflows is 47 and the largest n that fits in an int is 46
+The lowest n that overflows is 47 and the largest n that fits in an int is 46
 */
 public class fib{
   public static int fibonacci(int n){
