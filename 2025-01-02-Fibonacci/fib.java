@@ -9,7 +9,20 @@ public class fib{
     if(n>1) return fibonacci(n-1)+fibonacci(n-2);
     return n;
   }
+  public static void makeWords(int remainingLetters, String result, String alphabet){
+    if(remainingLetters>0){
+      for(int i = 0; i<alphabet.length()-1;i++){
+        result+=alphabet.substring(i,i+1);
+        System.out.println(result);
+      }
+      remainingLetters--;
+    }else{
+      return makeWords(remainingLetters, result, alphabet.substring(1));
+    }
+  }
   public static void main(String[] args){
-    System.out.println(fibonacci(46));
+    String res = "";
+    makeWords(2, res, "abc");
+    System.out.println(res);
   }
 }
