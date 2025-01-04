@@ -11,18 +11,16 @@ public class fib{
   }
   public static void makeWords(int remainingLetters, String result, String alphabet){
     if(remainingLetters>0){
-      for(int i = 0; i<alphabet.length()-1;i++){
-        result+=alphabet.substring(i,i+1);
-        System.out.println(result);
+      for(int i = 0; i<alphabet.length();i++){
+        makeWords(remainingLetters - 1, result+alphabet.charAt(i), alphabet);
       }
-      remainingLetters--;
     }else{
-      return makeWords(remainingLetters, result, alphabet.substring(1));
+		System.out.println(result);
+		return;
     }
   }
   public static void main(String[] args){
     String res = "";
-    makeWords(2, res, "abc");
-    System.out.println(res);
+    makeWords(3, res, "abc");
   }
 }
